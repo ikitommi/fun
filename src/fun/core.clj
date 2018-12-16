@@ -2,4 +2,5 @@
   (:require [fun.impl :as impl]
             [fun.fun :as p]))
 
-(println (satisfies? p/Fun impl/fun))
+(if-not (satisfies? p/Fun impl/fun)
+  (throw (ex-info "fail" {})))
